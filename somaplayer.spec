@@ -31,6 +31,7 @@ BuildRequires:	zlib-devel
 %if %build_plf
 BuildRequires:	liblame-devel
 %endif
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 somaplayer is music player for MP3, Ogg, wav, audio CDs, MP3 streams, and Ogg
