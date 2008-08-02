@@ -1,6 +1,6 @@
 %define name	somaplayer
 %define version 0.5.2
-%define release %mkrel 6
+%define release %mkrel 7
 %define major	0
 %define libname %mklibname %{name} %{major}
 
