@@ -3,6 +3,7 @@
 %define release %mkrel 9
 %define major	0
 %define libname %mklibname %{name} %{major}
+%define develname %mklibname -d %{name}
 
 %define build_plf 0
 %{?_with_plf: %global build_plf 1}
@@ -57,14 +58,14 @@ Provides:	%{name} = %{version}-%{release}
 This package contains the library needed to run programs dynamically
 linked with %{name}.
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/Other
 Requires:	%{libname} = %{version}
-Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{_lib}somaplayer0-devel < 0.5.2-9
 
-%description -n %{libname}-devel
+%description -n %{develname}
 This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
@@ -101,9 +102,10 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}
+%{_libdir}/*.so.%{major}.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/*.la
 %{_libdir}/*.a
