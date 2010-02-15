@@ -1,6 +1,6 @@
 %define name	somaplayer
 %define version 0.5.2
-%define release %mkrel 8
+%define release %mkrel 9
 %define major	0
 %define libname %mklibname %{name} %{major}
 
@@ -15,6 +15,7 @@ Group:		System/Servers
 License:	GPL
 URL:		http://www.somasuite.org/somaplayer.php
 Source:		http://soma.realityhacking.org/src/%{name}-%{version}-cvs.tar.bz2
+Patch:      somaplayer-fix-format-errors.patch
 BuildRequires:	pkgconfig
 BuildRequires:	libopenssl-devel
 BuildRequires:	libcdda-devel
@@ -68,6 +69,7 @@ applications which will use %{name}.
 
 %prep
 %setup -q -n %name
+%patch -p1
 
 %build
 %configure2_5x
