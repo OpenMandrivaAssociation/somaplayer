@@ -18,6 +18,7 @@ Source:		http://soma.realityhacking.org/src/%{name}-%{version}-cvs.tar.bz2
 Patch:      somaplayer-fix-format-errors.patch
 BuildRequires:	pkgconfig
 BuildRequires:	libopenssl-devel
+BuildRequires:	confuse-devel
 BuildRequires:	libcdda-devel
 BuildRequires:	libshout-devel
 BuildRequires:	libao-devel
