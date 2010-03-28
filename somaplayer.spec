@@ -1,6 +1,6 @@
 %define name	somaplayer
-%define version 0.5.2
-%define release %mkrel 9
+%define version 0.5.3
+%define release %mkrel 1
 %define major	0
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname -d %{name}
@@ -15,14 +15,13 @@ Summary:	Music player for MP3, Ogg, wav, audio CDs, MP3 streams, and Ogg streams
 Group:		System/Servers
 License:	GPL
 URL:		http://www.somasuite.org/somaplayer.php
-Source:		http://soma.realityhacking.org/src/%{name}-%{version}-cvs.tar.bz2
+Source:		http://soma.realityhacking.org/src/%{name}-%{version}.tar.gz
 Patch:      somaplayer-fix-format-errors.patch
 BuildRequires:	pkgconfig
 BuildRequires:	libopenssl-devel
 BuildRequires:	confuse-devel
 BuildRequires:	libcdda-devel
 BuildRequires:	libshout-devel
-BuildRequires:	libao-devel
 BuildRequires:	libmad-devel
 BuildRequires:	libid3-devel
 BuildRequires:	libid3tag-devel
@@ -70,11 +69,11 @@ This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
 %prep
-%setup -q -n %name
+%setup -q -n %name-%version
 %patch -p1
 
 %build
-%configure2_5x
+%configure2_5x --disable-ao
 %make
 
 %install
