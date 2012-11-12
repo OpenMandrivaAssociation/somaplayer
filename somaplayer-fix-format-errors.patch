@@ -1,0 +1,33 @@
+diff -Naur -x '*~' somaplayer/src/gtk/dialog.c somaplayer-fix-format-errors/src/gtk/dialog.c
+--- somaplayer/src/gtk/dialog.c	2005-08-08 10:22:38.000000000 +0200
++++ somaplayer-fix-format-errors/src/gtk/dialog.c	2010-02-15 21:40:54.000000000 +0100
+@@ -42,7 +42,7 @@
+     gtk_message_dialog_new (GTK_WINDOW (winmain),
+ 			    GTK_DIALOG_MODAL |
+ 			    GTK_DIALOG_DESTROY_WITH_PARENT,
+-			    GTK_MESSAGE_INFO, GTK_BUTTONS_OK, what);
++			    GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", what);
+   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+ 
+   ret = gtk_dialog_run (GTK_DIALOG (dialog));
+@@ -64,7 +64,7 @@
+     gtk_message_dialog_new (GTK_WINDOW (winmain),
+ 			    GTK_DIALOG_MODAL |
+ 			    GTK_DIALOG_DESTROY_WITH_PARENT,
+-			    GTK_MESSAGE_INFO, GTK_BUTTONS_OK_CANCEL, what);
++			    GTK_MESSAGE_INFO, GTK_BUTTONS_OK_CANCEL, "%s", what);
+   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+ 
+   ret = gtk_dialog_run (GTK_DIALOG (dialog));
+diff -Naur -x '*~' somaplayer/src/other.c somaplayer-fix-format-errors/src/other.c
+--- somaplayer/src/other.c	2005-08-28 11:56:54.000000000 +0200
++++ somaplayer-fix-format-errors/src/other.c	2010-02-15 21:44:22.000000000 +0100
+@@ -168,7 +168,7 @@
+ 	gtk_message_dialog_new (GTK_WINDOW (winmain),
+ 				GTK_DIALOG_MODAL |
+ 				GTK_DIALOG_DESTROY_WITH_PARENT,
+-				GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, a);
++				GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "%s", a);
+ 
+       ret = gtk_dialog_run (GTK_DIALOG (dialog));
+       gtk_widget_destroy (dialog);
