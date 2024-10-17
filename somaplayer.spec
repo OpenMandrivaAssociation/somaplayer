@@ -14,7 +14,7 @@ Release:	%{release}
 Summary:	Music player for MP3, Ogg, wav, audio CDs, MP3 streams, and Ogg streams
 Group:		System/Servers
 License:	GPL
-URL:		http://www.somasuite.org/somaplayer.php
+URL:		https://www.somasuite.org/somaplayer.php
 Source:		http://soma.realityhacking.org/src/%{name}-%{version}.tar.gz
 Patch:      somaplayer-fix-format-errors.patch
 BuildRequires:	pkgconfig
