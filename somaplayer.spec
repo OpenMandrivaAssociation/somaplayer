@@ -17,6 +17,11 @@ License:	GPL
 URL:		https://www.somasuite.org/somaplayer.php
 Source:		http://soma.realityhacking.org/src/%{name}-%{version}.tar.gz
 Patch:      somaplayer-fix-format-errors.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig
 BuildRequires:	libopenssl-devel
 BuildRequires:	confuse-devel
